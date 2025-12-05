@@ -1,0 +1,22 @@
+const prompt = require("prompt-sync")();
+const numero = [];
+
+let contador = prompt("Digite quantos números você quiser:");
+let limit = 0;
+while(limit <contador){
+    let num1 = prompt(`Digite o seu numero: `);
+    numero.push(num1);
+    limit++;
+}
+
+let maior = Math.max(...numero);
+let menor = Math.min(...numero);
+
+console.log(`Seu número maior é ${maior}`);
+console.log(`Seu número menor é ${menor}`);
+
+let dobro = numero.map(n => n * 2);
+console.log("Dobro dos valores:" , dobro);
+let maioresQue5 = numero.filter(n => n > 5);
+console.log("Números maiores que 5:", maioresQue5);
+
