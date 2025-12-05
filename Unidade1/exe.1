@@ -1,0 +1,25 @@
+const prompt = require("prompt-sync")();
+function avaliarRiscoDEcredito(rendaMensal, dividaAtual) {
+    const renda = parseFloat(rendaMensal);
+    const divida = parseFloat(dividaAtual);
+    
+//cálculo da taxa 
+    const TE = (divida / renda) * 100;
+
+    if (TE < 10) {
+        return "Risco Baixo";
+    } else if (TE >= 10 && TE < 30) {
+        return "Risco Moderado";
+    } else {
+        return "Risco Alto";
+
+    }
+
+}
+
+const rendaUsuario = prompt("Digite sua renda mensal:");
+const dividausuario = prompt("Digite o valor de sua divida:");
+
+//chamando a funcao
+const resultado = avaliarRiscoDEcredito(rendaUsuario, dividausuario);
+console.log(`Sua classifição de risco é: ${resultado}`);
