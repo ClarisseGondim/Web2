@@ -1,0 +1,99 @@
+/* Fonte e alinhamento */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+}
+
+/* Título */
+.titulo {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* bloco da calculadora */
+.calculadora {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    width: 300px;
+}
+
+/* Display */
+#display {
+    width: 100%;
+    height: 60px;
+    font-size: 28px;
+    text-align: right;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #e9ecef;
+    margin-bottom: 15px;
+}
+
+/* botões */
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Botões gerais */
+.btn {
+    padding: 18px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background: #dfe6e9;
+    transition: 0.1s;
+}
+
+/* Botões  */
+.btn:hover {
+    background: #b2bec3;
+}
+
+/* Efeito ao clicar */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Botões especiais */
+.operador {
+    background: #74b9ff;
+    color: white;
+}
+
+.operador:hover {
+    background: #0984e3;
+}
+
+.limpar {
+    background: #ff7675;
+    color: white;
+}
+
+.limpar:hover {
+    background: #d63031;
+}
+
+.igual {
+    background: #55efc4;
+    color: #222;
+    grid-column: span 2;
+}
+
+.igual:hover {
+    background: #00b894;
+}
+
+.zero {
+    grid-column: span 2;
+}
