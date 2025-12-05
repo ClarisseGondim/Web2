@@ -1,35 +1,41 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    text-align: center;
-    padding: 20px;
-}
+// Importa o Express
+const express = require("express");
+const app = express();
 
-.container {
-    background: white;
-    width: 320px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
-}
+// Porta do servidor
+const PORT = 3000;
 
-input {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
 
-button {
-    padding: 10px 20px;
-    cursor: pointer;
-    background: #ffcb05;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
+// Rota com PARÂMETRO DE ROTA
+app.get("/saudacao/:nome", (req, res) => {
+    const nome = req.params.nome; 
+    res.send(`Olá, ${nome}!`);
+});
 
-#resultado img {
-    width: 150px;
-    margin-top: 10px;
-}
+
+// Rota com QUERY STRING
+
+app.get("/soma", (req, res) => {
+    const a = Number(req.query.a); 
+    const b = Number(req.query.b); 
+
+    // Validação simples
+    if (isNaN(a) || isNaN(b)) {
+        return res.status(400).json({ erro: "Os parâmetros 'a' e 'b' devem ser números." });
+    }
+
+    const soma = a + b;
+
+  
+    res.json({
+        a,
+        b,
+        soma
+    });
+});
+
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
+
